@@ -32,11 +32,11 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button size="lg" className="w-full sm:w-auto animate-slide-in" as={Link} to="/vagas">
-              Explorar Vagas
+            <Button size="lg" className="w-full sm:w-auto animate-slide-in" asChild>
+              <Link to="/vagas">Explorar Vagas</Link>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto animate-slide-in" as={Link} to="/cadastrar">
-              Cadastrar Currículo
+            <Button size="lg" variant="outline" className="w-full sm:w-auto animate-slide-in" asChild>
+              <Link to="/cadastrar">Cadastrar Currículo</Link>
             </Button>
           </div>
           
