@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import AccessibilityMenu from './AccessibilityMenu';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Play } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,6 +57,12 @@ const Navbar = () => {
             <Link to="/contato" className="accessible-link font-medium">
               Contato
             </Link>
+            <Button variant="secondary" size="sm" asChild className="flex items-center gap-2">
+              <Link to="/video">
+                <Play className="h-4 w-4" />
+                <span>Ver Vídeo</span>
+              </Link>
+            </Button>
           </nav>
           
           <div className="flex items-center space-x-4">
@@ -102,6 +108,12 @@ const Navbar = () => {
             <Link to="/contato" className="accessible-link font-medium py-2">
               Contato
             </Link>
+            <Button variant="secondary" className="flex items-center justify-center gap-2 w-full" asChild>
+              <Link to="/video">
+                <Play className="h-4 w-4" />
+                <span>Ver Vídeo</span>
+              </Link>
+            </Button>
             <Button asChild variant="default" className="w-full">
               <Link to="/cadastrar">Cadastrar</Link>
             </Button>
