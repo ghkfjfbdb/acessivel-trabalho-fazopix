@@ -63,8 +63,8 @@ const Navbar = () => {
             <AccessibilityMenu />
             
             <div className="hidden md:block">
-              <Button as={Link} to="/cadastrar" variant="default">
-                Cadastrar
+              <Button asChild variant="default">
+                <Link to="/cadastrar">Cadastrar</Link>
               </Button>
             </div>
             
@@ -102,8 +102,8 @@ const Navbar = () => {
             <Link to="/contato" className="accessible-link font-medium py-2">
               Contato
             </Link>
-            <Button as={Link} to="/cadastrar" variant="default" className="w-full">
-              Cadastrar
+            <Button asChild variant="default" className="w-full">
+              <Link to="/cadastrar">Cadastrar</Link>
             </Button>
           </nav>
         </div>
