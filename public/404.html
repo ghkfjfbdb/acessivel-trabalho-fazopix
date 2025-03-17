@@ -9,18 +9,20 @@
     // https://github.com/rafgraph/spa-github-pages
     // Esta script redireciona para a rota hash correta
     
-    // Calcula o caminho base e restante
-    const l = window.location;
+    // Pega a URL atual
+    const loc = window.location;
     
-    // Para sites de projeto GitHub Pages, normalmente usamos 1
-    // Para sites de usuário GitHub Pages, usamos 0
-    const segmentCount = 1;
+    // Para sites de projeto GitHub Pages: username.github.io/repo-name
+    // Ajuste para o repositório específico
+    const repoName = 'trabalho-acessivel'; // Ajuste para o nome do seu repositório
     
-    const baseUrl = l.pathname.slice(0, l.pathname.indexOf('/', 1) + 1) || '/';
-    const restPath = l.pathname.slice(baseUrl.length);
+    // Constrói a nova URL
+    const redirectTo = loc.protocol + '//' + loc.hostname + 
+      (loc.hostname.indexOf('github.io') > -1 ? '/' + repoName : '') + 
+      '/#' + loc.pathname.replace(/^\/[^\/]+/, '') + (loc.search || '');
     
-    // Redireciona para a rota hash
-    window.location.href = (baseUrl === '/' ? '' : baseUrl) + '#' + (restPath || '/') + (l.search || '');
+    // Redireciona
+    window.location.replace(redirectTo);
   </script>
 </head>
 <body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">

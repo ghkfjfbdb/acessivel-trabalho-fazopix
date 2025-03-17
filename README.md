@@ -10,7 +10,7 @@ Este projeto visa criar uma interface web totalmente acessível, focada especial
 ## Acesso ao site
 
 O site está disponível no GitHub Pages através do seguinte link:
-https://seuusuario.github.io/seu-repositorio/
+https://seuusuario.github.io/trabalho-acessivel/
 
 ## Créditos
 
