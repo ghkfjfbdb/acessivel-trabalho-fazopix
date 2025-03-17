@@ -25,5 +25,14 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
+    // Ajustes para garantir que o site funcione no GitHub Pages
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      }
+    }
   }
 }));

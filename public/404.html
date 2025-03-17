@@ -16,14 +16,14 @@
     // Para sites de usuário GitHub Pages, usamos 0
     const segmentCount = 1;
     
-    const baseUrl = l.pathname.slice(0, l.pathname.indexOf('/', 1) + 1);
+    const baseUrl = l.pathname.slice(0, l.pathname.indexOf('/', 1) + 1) || '/';
     const restPath = l.pathname.slice(baseUrl.length);
     
     // Redireciona para a rota hash
-    window.location.href = baseUrl + '#' + (restPath || '/') + (l.search || '');
+    window.location.href = (baseUrl === '/' ? '' : baseUrl) + '#' + (restPath || '/') + (l.search || '');
   </script>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
   <h1>Redirecionando...</h1>
   <p>Se você não for redirecionado automaticamente, <a href="/">clique aqui</a>.</p>
 </body>
