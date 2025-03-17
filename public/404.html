@@ -9,12 +9,18 @@
     // https://github.com/rafgraph/spa-github-pages
     // This script takes the current URL and converts the path and query
     // string into a single hash location that GitHub Pages can handle.
-    const segments = window.location.pathname.split('/');
-    const repo = segments[1];
-    const rest = segments.slice(2).join('/');
+    const segmentCount = 1; // Change this depending on your repo name (0 for user site, 1 for project site)
+    const l = window.location;
+    const rootPath = l.pathname.split('/').slice(0, segmentCount + 1).join('/');
+    const restPath = l.pathname.slice(rootPath.length);
     
-    // Redirect to the index.html with a hash route
-    window.location.href = window.location.origin + '/' + repo + '/#/' + rest + window.location.search;
+    if (restPath && restPath !== '/') {
+      // Redirect to the hash route
+      window.location.href = rootPath + '/#' + restPath + l.search;
+    } else {
+      // If at root, just redirect to the hash root
+      window.location.href = rootPath + '/#' + l.search;
+    }
   </script>
 </head>
 <body>
