@@ -7,23 +7,24 @@
   <script>
     // Single Page Apps for GitHub Pages
     // https://github.com/rafgraph/spa-github-pages
-    // This script takes the current URL and converts the path and query
-    // string into a single hash location that GitHub Pages can handle.
-    const segmentCount = 1; // Change this depending on your repo name (0 for user site, 1 for project site)
-    const l = window.location;
-    const rootPath = l.pathname.split('/').slice(0, segmentCount + 1).join('/');
-    const restPath = l.pathname.slice(rootPath.length);
+    // Esta script redireciona para a rota hash correta
     
-    if (restPath && restPath !== '/') {
-      // Redirect to the hash route
-      window.location.href = rootPath + '/#' + restPath + l.search;
-    } else {
-      // If at root, just redirect to the hash root
-      window.location.href = rootPath + '/#' + l.search;
-    }
+    // Calcula o caminho base e restante
+    const l = window.location;
+    
+    // Para sites de projeto GitHub Pages, normalmente usamos 1
+    // Para sites de usuário GitHub Pages, usamos 0
+    const segmentCount = 1;
+    
+    const baseUrl = l.pathname.slice(0, l.pathname.indexOf('/', 1) + 1);
+    const restPath = l.pathname.slice(baseUrl.length);
+    
+    // Redireciona para a rota hash
+    window.location.href = baseUrl + '#' + (restPath || '/') + (l.search || '');
   </script>
 </head>
 <body>
-  Redirecionando...
+  <h1>Redirecionando...</h1>
+  <p>Se você não for redirecionado automaticamente, <a href="/">clique aqui</a>.</p>
 </body>
 </html>
