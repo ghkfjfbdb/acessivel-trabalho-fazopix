@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/trabalho-acessivel/',  // Substitua pelo nome do seu repositório GitHub
+  base: '/acessivel-trabalho-fazopix/',  // Atualizado para o seu repositório correto
   server: {
     host: "::",
     port: 8080,
