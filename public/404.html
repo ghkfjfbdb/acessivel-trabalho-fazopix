@@ -14,11 +14,16 @@
     // Para sites de projeto GitHub Pages: username.github.io/repo-name
     const repoName = 'acessivel-trabalho-fazopix';
     
+    // Remove paths duplicados que podem ocorrer no caminho
+    let pathname = loc.pathname;
+    if (pathname.indexOf('/' + repoName) === 0) {
+      pathname = pathname.substring(repoName.length + 1);
+    }
+    
     // Constrói a nova URL com hash routing
     const redirectTo = loc.protocol + '//' + loc.hostname + 
       (loc.hostname.indexOf('github.io') > -1 ? '/' + repoName : '') + 
-      '/#' + loc.pathname.replace(/^\/acessivel-trabalho-fazopix/, '').replace(/^\/[^\/]+/, '') + 
-      (loc.search || '');
+      '/#' + pathname + (loc.search || '');
     
     console.log("Redirecting to:", redirectTo);
     

@@ -23,8 +23,13 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true, // Enable sourcemaps for debugging
+    sourcemap: false, // Disable sourcemaps to avoid errors
     minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console logs in production
+      },
+    },
     // Ajustes para garantir que o site funcione no GitHub Pages
     rollupOptions: {
       output: {
