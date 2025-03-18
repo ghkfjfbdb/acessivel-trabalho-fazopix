@@ -1,6 +1,6 @@
 
 # Trabalho Acessível
 
-Site disponível em: https://ghkfjfbdb.github.io/acessivel-trabalho-fazopix/
+Site disponível em: https://preview--acessivel-trabalho-fazopix.lovable.app/
 
 MESTRE R
