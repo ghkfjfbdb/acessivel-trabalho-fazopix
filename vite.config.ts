@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/acessivel-trabalho-fazopix/',  // Atualizado para o seu repositório correto
+  base: '/acessivel-trabalho-fazopix/',  // Configured for the correct repository
   server: {
     host: "::",
     port: 8080,
@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
-    sourcemap: false,
+    sourcemap: true, // Enable sourcemaps for debugging
     minify: 'terser',
     // Ajustes para garantir que o site funcione no GitHub Pages
     rollupOptions: {

@@ -7,19 +7,20 @@
   <script>
     // Single Page Apps for GitHub Pages
     // https://github.com/rafgraph/spa-github-pages
-    // Esta script redireciona para a rota hash correta
     
     // Pega a URL atual
     const loc = window.location;
     
     // Para sites de projeto GitHub Pages: username.github.io/repo-name
-    // Ajuste para o repositório específico
-    const repoName = 'acessivel-trabalho-fazopix'; // Atualizado para o repositório correto
+    const repoName = 'acessivel-trabalho-fazopix';
     
-    // Constrói a nova URL
+    // Constrói a nova URL com hash routing
     const redirectTo = loc.protocol + '//' + loc.hostname + 
       (loc.hostname.indexOf('github.io') > -1 ? '/' + repoName : '') + 
-      '/#' + loc.pathname.replace(/^\/[^\/]+/, '') + (loc.search || '');
+      '/#' + loc.pathname.replace(/^\/acessivel-trabalho-fazopix/, '').replace(/^\/[^\/]+/, '') + 
+      (loc.search || '');
+    
+    console.log("Redirecting to:", redirectTo);
     
     // Redireciona
     window.location.replace(redirectTo);
@@ -27,6 +28,6 @@
 </head>
 <body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
   <h1>Redirecionando...</h1>
-  <p>Se você não for redirecionado automaticamente, <a href="/">clique aqui</a>.</p>
+  <p>Se você não for redirecionado automaticamente, <a href="/acessivel-trabalho-fazopix/">clique aqui</a>.</p>
 </body>
 </html>
