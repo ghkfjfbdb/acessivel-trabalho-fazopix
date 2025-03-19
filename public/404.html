@@ -6,12 +6,19 @@
   <title>Redirecionando...</title>
   <script>
     // Single Page Apps for GitHub Pages
-    // Redirect to the index page with hash routing
+    // https://github.com/rafgraph/spa-github-pages
+    
+    // Redirects to the correct GitHub Pages URL with hash routing
+    var pathSegmentsToKeep = 1;
     var l = window.location;
+    var repo = '/acessivel-trabalho-fazopix';
+    
+    // Redirect to the correct URL with hash routing
     l.replace(
       l.protocol + '//' + l.hostname + 
       (l.port ? ':' + l.port : '') +
-      '/acessivel-trabalho-fazopix/' +
+      repo + '/#' + 
+      l.pathname.slice(repo.length) +
       (l.search ? l.search : '')
     );
   </script>
