@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/acessivel-trabalho-fazopix/',  // Configured for the correct repository
+  base: mode === 'production' ? '/acessivel-trabalho-fazopix/' : '/',
   server: {
     host: "::",
     port: 8080,
@@ -23,14 +23,13 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
-    sourcemap: false, // Disable sourcemaps to avoid errors
+    sourcemap: false,
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console logs in production
+        drop_console: false, // Mantém console.logs para debug
       },
     },
-    // Ajustes para garantir que o site funcione no GitHub Pages
     rollupOptions: {
       output: {
         manualChunks: undefined,

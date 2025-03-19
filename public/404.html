@@ -8,27 +8,19 @@
     // Single Page Apps for GitHub Pages
     // https://github.com/rafgraph/spa-github-pages
     
-    // Pega a URL atual
-    const loc = window.location;
+    // Redirects to the correct GitHub Pages URL with hash routing
+    var pathSegmentsToKeep = 1;
+    var l = window.location;
+    var repo = '/acessivel-trabalho-fazopix';
     
-    // Para sites de projeto GitHub Pages: username.github.io/repo-name
-    const repoName = 'acessivel-trabalho-fazopix';
-    
-    // Remove paths duplicados que podem ocorrer no caminho
-    let pathname = loc.pathname;
-    if (pathname.indexOf('/' + repoName) === 0) {
-      pathname = pathname.substring(repoName.length + 1);
-    }
-    
-    // Constrói a nova URL com hash routing
-    const redirectTo = loc.protocol + '//' + loc.hostname + 
-      (loc.hostname.indexOf('github.io') > -1 ? '/' + repoName : '') + 
-      '/#' + pathname + (loc.search || '');
-    
-    console.log("Redirecting to:", redirectTo);
-    
-    // Redireciona
-    window.location.replace(redirectTo);
+    // Redirect to the correct URL with hash routing
+    l.replace(
+      l.protocol + '//' + l.hostname + 
+      (l.port ? ':' + l.port : '') +
+      repo + '/#' + 
+      l.pathname.slice(repo.length) +
+      (l.search ? l.search : '')
+    );
   </script>
 </head>
 <body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
