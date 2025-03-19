@@ -6,12 +6,18 @@ import './index.css'
 // Função para lidar com erros não capturados
 window.addEventListener('error', (event) => {
   console.error('Erro global capturado:', event.error);
+  document.body.innerHTML += `<div style="color:red;padding:20px">Erro: ${event.error?.message || 'Erro desconhecido'}</div>`;
 });
 
 // Ensure the root element exists before rendering
 const rootElement = document.getElementById("root");
 if (!rootElement) {
   console.error("Root element not found");
+  document.body.innerHTML = `<div style="padding: 20px; text-align: center; font-family: sans-serif;">
+    <h1>Erro: Elemento root não encontrado</h1>
+    <p>Por favor, atualize a página ou tente novamente mais tarde.</p>
+    <p>Créditos: MESTRE R</p>
+  </div>`;
 } else {
   const root = createRoot(rootElement);
   try {

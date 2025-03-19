@@ -32,7 +32,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/video" element={<VideoPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>
